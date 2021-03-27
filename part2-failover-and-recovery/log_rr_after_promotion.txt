@@ -1,0 +1,30 @@
+[ec2-user@ip-10-2-10-179 ~]$ mysql -u admin -p -h udacity-read-replica.clik8fhuebvt.us-west-1.rds.amazonaws.com
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 41
+Server version: 8.0.20 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> USE udacity;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+
+MySQL [udacity]> INSERT INTO tutorials_tbl (tutorial_title, tutorial_author, submission_date)   VALUES ("Learn PHP", "John Poul", NOW());
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+
+MySQL [udacity]> SELECT * from tutorials_tbl;
++-------------+----------------+-----------------+-----------------+
+| tutorial_id | tutorial_title | tutorial_author | submission_date |
++-------------+----------------+-----------------+-----------------+
+|           1 | Learn PHP      | John Poul       | 2021-03-27      |
+|           2 | Learn PHP      | John Poul       | 2021-03-27      |
++-------------+----------------+-----------------+-----------------+
+2 rows in set (0.00 sec)
+
+MySQL [udacity]>

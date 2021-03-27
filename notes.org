@@ -1,7 +1,7 @@
 * ami
 
 *** install mysql client
-   sudo yum install
+   sudo yum update
    sudo yum install mysql
 
 **   mysql
