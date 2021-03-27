@@ -1,0 +1,34 @@
+Achievable Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for this Multi-AZ, multi-region database in terms of:
+
+ * Minimum RTO for a single AZ outage
+ * Minimum RTO for a single region outage
+ * Minimum RPO for a single AZ outage
+ * Minimum RPO for a single region outage
+
+RTO is defined as the targeted duration of time within which business processes are restored after disaster of disruption. For example 1h RTO would be reasonable for the following example:
+ - 00:00 problem happens
+ - 00:05 alarms are triggered - (5 mins)
+ - 00:06 alert triggers staff - (1 min)
+ - 00:16 on-call staff get to computer, log in, log onto VPN (10 mins)
+ - 00:26 - On-call staff starts diagnosing issue (10 minutes)
+ - 00:41 - Root cause is discovered (15 minutes)
+ - 00:46 - Remediation started (5 minutes)
+ - 00:56 - Remediation completed (10 minutes)
+Total time: 56 minutes
+
+RPO (Recovery Point Objective) is defined as the maximum amount of time over which data can be lost. For example, RPO is 20 minutes for the following example:
+ - 07:00 database outage, the application is still running, but its losing data
+ - 07:20 application stops running
+ - 08:00 database is restored and the application is running
+
+Database solution contains:
+ - main database (udacity) consisting of active and stand-by instances.
+ - read replica database (udacity-read-replica) composed of active and stand-by instances.
+
+Main and read replica databases are in different regions us-east1 and us-west1. Within each region active and standby instances are deployed on separate availability zones (us-east-1a, us-east-1b) and (us-west-1a, us-west-1c).
+
+RTO and RPO estimates for highly available, multi availability zones and multi-region database:
+ * Minimum RTO 0 minutes for a single AZ outage
+ * Minimum RTO 0 minutes for a single region outage
+ * Minimum RPO 0 minutes for a single AZ outage
+ * Minimum RPO 0 minutes for a single region outage

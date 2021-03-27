@@ -1,0 +1,29 @@
+* ami
+
+*** install mysql client
+   sudo yum install
+   sudo yum install mysql
+
+**   mysql
+*** resources
+    https://www.tutorialspoint.com/mysql/index.htm
+*** connect
+    mysql -u admin -h udacity.czgfu59sfkn7.us-east-1.rds.amazonaws.com -p
+
+*** create table and select
+
+  CREATE DATABASE udacity;
+  USE udacity;
+
+  CREATE TABLE tutorials_tbl(
+        tutorial_id INT NOT NULL AUTO_INCREMENT,
+        tutorial_title VARCHAR(100) NOT NULL,
+        tutorial_author VARCHAR(40) NOT NULL,
+        submission_date DATE,
+        PRIMARY KEY ( tutorial_id )
+     );
+
+  INSERT INTO tutorials_tbl (tutorial_title, tutorial_author, submission_date)
+  VALUES ("Learn PHP", "John Poul", NOW());
+
+  SELECT * from tutorials_tbl;
