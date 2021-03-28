@@ -8,7 +8,8 @@
 *** resources
     https://www.tutorialspoint.com/mysql/index.htm
 *** connect
-    mysql -u admin -h udacity.czgfu59sfkn7.us-east-1.rds.amazonaws.com -p
+    mysql -u admin -p -h udacity.czgfu59sfkn7.us-east-1.rds.amazonaws.com
+    mysql -u admin -p -h udacity-read-replica.clik8fhuebvt.us-west-1.rds.amazonaws.com
 
 *** create table and select
 
